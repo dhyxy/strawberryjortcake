@@ -1,0 +1,259 @@
+@import "tailwindcss";
+
+#root {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes jitter {
+  0%, 100% {
+    transform: translate(0, 0);
+    rotate: 0deg;
+  }
+  25% {
+    transform: translate(1px, -1px);
+    rotate: 2deg;
+  }
+  50% {
+    transform: translate(-1px, 1px);
+    rotate: 0deg;
+  }
+  75% {
+    transform: translate(-1px, -1px);
+    rotate: -2deg;
+  }
+}
+
+@keyframes jitter2 {
+  0%, 100% {
+    transform: rotate(0deg);
+    transform-origin: bottom right;
+  }
+  20% {
+    transform: rotate(0.3deg);
+    transform-origin: bottom right;
+  }
+  40% {
+    transform: rotate(-0.3deg);
+    transform-origin: bottom right;
+  }
+  60% {
+    transform: rotate(0.6deg);
+    transform-origin: bottom right;
+  }
+  80% {
+    transform: rotate(-0.6deg);
+    transform-origin: bottom right;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.jitter {
+  animation: jitter 0.3s infinite;
+}
+
+.jitter2 {
+  animation: jitter2 0.6s infinite;
+}
+
+@keyframes stretch {
+  0% {
+    transform: scale(1, 1);
+    transform-origin: right;
+  }
+  50% {
+    transform: scale(1, 1.3);
+    transform-origin: right;
+  }
+  100% {
+    transform: scale(1, 1);
+    transform-origin: right;
+  }
+}
+
+.love-stretch {
+  animation: stretch 4s infinite;
+}
+
+@keyframes glow-streak {
+  0%, 100% {
+    filter: drop-shadow(0 0 0 rgba(254, 235, 167, 0));
+    transform: scale(1, 1);
+    transform-origin: top left;
+  }
+  30% {
+    filter: drop-shadow(8px 0 35px rgba(254, 235, 167, 0.3)) drop-shadow(-8px 0 35px rgba(254, 235, 167, 0.3));
+  }
+  60% {
+    filter: drop-shadow(16px 0 50px rgba(254, 235, 167, 0.8)) drop-shadow(-16px 0 50px rgba(254, 235, 167, 0.8));
+    transform: scale(1.1, 1.1);
+    transform-origin: top left;
+  }
+}
+
+.glow-streak {
+  animation: glow-streak 4s infinite;
+}
+
+.clickable-transparent {
+  pointer-events: none;
+}
+
+.clickable-transparent img {
+  pointer-events: auto;
+}
+
+/* Overlay image positioning */
+.overlay-image {
+  position: absolute;
+  z-index: 20;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+}
+
+.overlay-image--t {
+  top: 76%;
+  left: 52.6%;
+  width: 5.5%;
+}
+
+.overlay-image--love {
+  top: 39%;
+  left: 50.5%;
+  width: 7%;
+}
+
+.overlay-image--newwork {
+  top: 23%;
+  left: 23%;
+  width: 14%;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100vh);
+  }
+}
+
+.slide-up {
+  animation: slideUp 0.8s ease-in-out forwards;
+}
+
+@keyframes slideInT {
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translate(-45vw, -60vh);
+  }
+}
+
+@keyframes slideInLove {
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translate(-45vw, -30vh);
+  }
+}
+
+@keyframes slideInNewWork {
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translate(-18vw, -16vh);
+  }
+}
+
+.slide-in-t {
+  animation: slideInT 0.8s ease-in-out forwards;
+}
+
+.slide-in-love {
+  animation: slideInLove 0.8s ease-in-out forwards;
+}
+
+.slide-in-newwork {
+  animation: slideInNewWork 0.8s ease-in-out forwards;
+}
+
+@keyframes slideOutT {
+  0% {
+    transform: translate(-45vw, -60vh);
+  }
+  100% {
+    transform: translate(100vw, -60vh);
+  }
+}
+
+@keyframes slideOutLove {
+  0% {
+    transform: translate(-45vw, -30vh);
+  }
+  100% {
+    transform: translate(100vw, -30vh);
+  }
+}
+
+@keyframes slideOutNewWork {
+  0% {
+    transform: translate(-18vw, -16vh);
+  }
+  100% {
+    transform: translate(-100vw, -16vh);
+  }
+}
+
+.slide-out-t {
+  animation: slideOutT 0.8s ease-in-out forwards;
+}
+
+.slide-out-love {
+  animation: slideOutLove 0.8s ease-in-out forwards;
+}
+
+.slide-out-newwork {
+  animation: slideOutNewWork 0.8s ease-in-out forwards;
+}
