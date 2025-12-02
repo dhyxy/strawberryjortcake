@@ -172,7 +172,6 @@
   display: grid;
   place-items: center;
   overflow: visible;
-  margin-top: 2rem;
   margin-left: calc(50% - 50vw);
 }
 
@@ -218,7 +217,7 @@
 }
 
 .marquee_blur p {
-  color: black;
+  color: #E1A4B6;
 }
 
 .marquee_clear {
@@ -232,5 +231,5 @@
 }
 
 .marquee_clear p {
-  color: black;
+  color: #E1A4B6;
 }
