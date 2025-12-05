@@ -37,13 +37,13 @@ import '@fontsource/poppins';
 
 function App() {
   const [currPage, setCurrPage] = useState<'closed' | 'open' | 'newWorkOpportunity' | 'love' | 't' | 'nappy' | 'studiopaloma'>('closed')
-  
+
   const nappyPhotos = [
     nappyPhoto1, nappyPhoto2, nappyPhoto3, nappyPhoto4, nappyPhoto5, nappyPhoto6,
     nappyPhoto7, nappyPhoto8, nappyPhoto9, nappyPhoto10, nappyPhoto11, nappyPhoto12,
     nappyPhoto13, nappyPhoto14, nappyPhoto15, nappyPhoto16
   ]
-  
+
   const studioPalomaPhotos = [
     studioPalomaPhoto1, studioPalomaPhoto2, studioPalomaPhoto3, studioPalomaPhoto4
   ]
@@ -57,11 +57,11 @@ function App() {
   const baseBlockClasses =
     'relative mx-auto flex w-full flex-1 flex-col px-7 py-6 backdrop-blur-md'
   const blockSubtitleClasses =
-    'mb-[0.4rem] text-[clamp(0.85rem,1vw+0.5rem,1rem)] uppercase tracking-[0.2em] text-[#E1A4B6] font-bold'
+    'mb-[0.4rem] text-[clamp(0.85rem,1vw+0.5rem,1rem)] uppercase tracking-[0.2em] text-[#E1A4B6] font-bold text-stroke-desktop'
   const blockTitleClasses =
-    'mb-[0.8rem] text-[clamp(1.4rem,2vw+0.8rem,2.1rem)] uppercase tracking-[0.08em] text-[#f4f4f4] font-bold text-shadow-md text-shadow-[#f4f4f4]'
+    'mb-[0.8rem] text-[clamp(1.4rem,2vw+0.8rem,2.1rem)] uppercase tracking-[0.08em] text-[#f4f4f4] font-bold text-shadow-md text-shadow-[#f4f4f4] text-stroke-desktop'
   const blockBodyClasses =
-    'grid gap-[0.35rem] text-[clamp(0.95rem,1vw+0.6rem,1.05rem)] leading-[1.45] text-[#f4f4f4]'
+    'grid gap-[0.35rem] text-[clamp(0.95rem,1vw+0.6rem,1.05rem)] leading-[1.45] text-[#f4f4f4] text-stroke-desktop'
   const baseVideoClasses =
     'w-full max-w-[clamp(200px,24vw,320px)] overflow-hidden rounded-[1rem] border border-[rgba(255,255,255,0.18)] bg-[rgba(255,255,255,0.08)] object-cover'
 
@@ -101,12 +101,12 @@ function App() {
             <>
               <img
                 src={tPng}
-                className="absolute z-20 cursor-pointer -translate-x-1/2 -translate-y-1/2 pointer-events-auto top-[80.5%] left-[55.5%] w-[5.5%] animate-[jitter2_0.6s_infinite]"
+                className="absolute z-20 cursor-pointer -translate-x-1/2 -translate-y-1/2 pointer-events-auto top-[80.5%] left-[55.5%] w-[5.5%] animate-[jitter2_0.6s_infinite] border-2 border-white md:border-0"
                 onClick={() => handleOpenImageClick('t')}
               />
               <img
                 src={newWorkOpportunity}
-                className="absolute z-20 cursor-pointer -translate-x-1/2 -translate-y-1/2 pointer-events-auto top-[25%] left-[30%] w-[14%] animate-[glow-streak_4s_infinite]"
+                className="absolute z-20 cursor-pointer -translate-x-1/2 -translate-y-1/2 pointer-events-auto top-[25%] left-[30%] w-[14%] animate-[glow-streak_4s_infinite] border-2 border-white md:border-0"
                 onClick={() => handleOpenImageClick('newWorkOpportunity')}
               />
             </>
@@ -140,8 +140,8 @@ function App() {
                 <source src={nappyVideo} type="video/mp4" />
               </video>
             </div>
-            <div className="relative w-full h-full max-w-5xl mt-80">
-              <div className="marquee">
+            <div className="relative w-full h-full max-w-5xl overflow-hidden">
+              <div className="marquee absolute top-[8rem] left-0 right-0 z-10 pointer-events-none">
                 <div className="marquee_blur" aria-hidden="true">
                   <div className="marquee_content">
                     <p className="marquee_text">{marqueeText}</p>
@@ -155,9 +155,16 @@ function App() {
                   </div>
                 </div>
               </div>
-              <div className="h-full overflow-y-auto px-6 pt-36 pb-10 space-y-10">
-                <p className="text-justify text-xl text-[#f4f4f4]">
-                  <span className="font-bold md:text-[#E1A4B6] text-4xl">Tiara Matusin</span> is a multidisciplinary creative director, cultural architect, and movement artist based in New York City. Rooted in Mohkínstsis/Calgary, she builds at the intersection of fashion, performance, and production — crafting creative ecosystems that are visually compelling, culturally intentional, and future-driven.
+              <div 
+                className="h-full overflow-y-auto overflow-x-hidden px-6 pt-60 pb-20 space-y-10"
+                style={{
+                  maskImage: 'linear-gradient(to bottom, transparent 0%, transparent 15rem, black 15rem, black 100%)',
+                  WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, transparent 15rem, black 15rem, black 100%)'
+                }}
+              >
+                <div>
+                <p className="text-justify text-xl text-[#f4f4f4] text-stroke-desktop">
+                  <span className="font-bold md:text-[#E1A4B6] text-4xl text-stroke-desktop">Tiara Matusin</span> is a multidisciplinary creative director, cultural architect, and movement artist based in New York City. Rooted in Mohkínstsis/Calgary, she builds at the intersection of fashion, performance, and production — crafting creative ecosystems that are visually compelling, culturally intentional, and future-driven.
 
                   As the Co-Founder and Artistic Director of NAPPY, Tiara established Western Canada’s first all-Black contemporary dance collective, transforming the regional arts landscape through work that disrupts Eurocentric frameworks and centers Black futurism, representation, and community impact.
 
@@ -264,7 +271,7 @@ function App() {
                     </div>
                   </div>
                   <video
-                    className="aspect-[3/4] mt-6 h-full w-full max-w-[360px] flex-1 self-center overflow-hidden rounded-[1rem] border border-[rgba(255,255,255,0.18)] bg-[rgba(255,255,255,0.08)] object-cover md:self-stretch md:max-w-[clamp(220px,28vw,360px)]"
+                    className="aspect-[3/4] mt-6 h-full w-full max-w-[360px] flex-1 self-center rounded-[1rem] border border-[rgba(255,255,255,0.18)] bg-[rgba(255,255,255,0.08)] object-cover md:self-stretch md:max-w-[clamp(220px,28vw,360px)]"
                     autoPlay
                     muted
                     loop
@@ -272,6 +279,7 @@ function App() {
                   >
                     <source src={crocsVideo} type="video/mp4" />
                   </video>
+                </div>
                 </div>
               </div>
             </div>
@@ -398,7 +406,7 @@ function App() {
       )}
 
       {currPage === 'newWorkOpportunity' && (
-        <div className="h-full w-full max-w-4xl mx-auto space-y-6 overflow-y-auto flex flex-col items-center justify-center px-6 py-10">
+        <div className="h-full w-full max-w-4xl mx-auto space-y-6 overflow-y-auto flex flex-col items-center justify-center px-6 py-10 mb-10">
           <img
             src={newWorkOpportunity}
             className={`object-contain left-[20%] top-[20%] absolute w-[30%] ${slideInTrigger === 'newWorkOpportunity'
@@ -407,7 +415,7 @@ function App() {
               }`}
             onClick={() => setCurrPage('open')}
           />
-          <p className="text-justify text-[#f4f4f4] text-2xl">
+          <p className="text-left text-[#f4f4f4] text-2xl h-[70%]">
             I'm actively exploring creative roles in fashion and the arts where I can flex my full range of skills — from styling,
             trend forecasting, and merchandising to creative direction and production management. I'm particularly drawn to positions
             that are culturally engaged, forward-thinking, and allow for meaningful collaboration across disciplines. I'm open to remote,

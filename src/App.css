@@ -173,7 +173,7 @@
   place-items: center;
   overflow: visible;
   margin-left: calc(50% - 50vw);
-}
+  }
 
 
 .marquee_content {
@@ -185,7 +185,7 @@
 .marquee_text {
   white-space: nowrap;
   margin-right: 1em;
-}
+  }
 
 .marquee_text:last-child {
   margin-right: 0;
@@ -232,4 +232,10 @@
 
 .marquee_clear p {
   color: #E1A4B6;
+}
+
+@media (min-width: 768px) {
+  .text-stroke-desktop {
+    -webkit-text-stroke: 0.5px black;
+  }
 }
